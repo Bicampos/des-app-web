@@ -1,7 +1,7 @@
 :root {
     --bg-color: #fcfaf7;      /* Crema Hueso */
     --text-main: #1a2a3a;    /* Azul Petróleo */
-    --accent-color: #843424;  /* Terracota */
+    --accent-color: #1a4d8c;  /* Azul Profundo */
     --soft-gray: #e5e5e5;
 }
 
@@ -25,7 +25,7 @@ main {
     flex-grow: 1;
 }
 
-/* Navegación Minimalista Superior */
+/* NAVEGACIÓN SUPERIOR */
 header {
     padding: 40px 10%;
 }
@@ -51,33 +51,31 @@ header {
     border-bottom: 2px solid var(--accent-color);
 }
 
-/* --- HERO SECTION CON FOTO CIRCULAR --- */
+/* HERO: FOTO Y NOMBRE */
 .hero-minimal {
     padding: 80px 10% 60px 10%;
 }
 
 .hero-perfil {
     display: flex;
-    align-items: center; /* Alinea verticalmente la foto con el texto */
-    gap: 40px; /* Separación entre la foto y tu nombre */
+    align-items: center;
+    gap: 40px;
 }
 
 .foto-circulo {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%; /* Esto hace que sea un círculo perfecto */
-    background-color: #d1cfcb; /* Gris base de tu paleta como placeholder */
-    flex-shrink: 0; /* Evita que el círculo se aplaste */
-    border: 3px solid var(--accent-color); /* Borde sutil color terracota */
-    
-    /* Estas propiedades centrarán tu imagen cuando la añadas */
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: #d1cfcb;
+    flex-shrink: 0;
+    border: 3px solid var(--accent-color);
     background-size: cover;
     background-position: center;
 }
 
 .hero-texto h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4.5rem;
+    font-size: 4rem;
     margin-bottom: 5px;
     line-height: 1.1;
 }
@@ -88,7 +86,7 @@ header {
     font-weight: 300;
 }
 
-/* Columnas de Información */
+/* COLUMNAS CV */
 .info-columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -104,17 +102,12 @@ header {
     padding-bottom: 10px;
 }
 
-.info-item {
-    margin-bottom: 20px;
-}
-
 .highlight {
     font-weight: 600;
     display: block;
     color: var(--accent-color);
 }
 
-/* Herramientas */
 .tool-item {
     display: flex;
     align-items: center;
@@ -123,15 +116,15 @@ header {
 }
 
 .tool-icon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background: var(--text-main);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     border-radius: 4px;
 }
 
@@ -139,41 +132,9 @@ header {
     content: "•";
     color: var(--accent-color);
     margin-right: 10px;
-    font-weight: bold;
 }
 
-.skill-dot {
-    display: block;
-    margin-bottom: 10px;
-}
-
-/* --- ESTILOS DEL FOOTER --- */
-.site-footer {
-    background-color: var(--accent-color);
-    color: #ffffff;
-    padding: 50px 10%;
-    text-align: center;
-    margin-top: 60px;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 30px;
-}
-
-.icon-link {
-    text-decoration: none;
-    font-size: 2rem;
-    transition: transform 0.3s;
-}
-
-.icon-link:hover {
-    transform: scale(1.2);
-}
-
-/* --- ESTILOS DEL FOOTER --- */
+/* FOOTER AZUL CON ICONOS BLANCOS */
 .site-footer {
     background-color: var(--accent-color);
     color: #ffffff;
@@ -185,20 +146,24 @@ header {
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 40px;
     margin-bottom: 35px;
 }
 
 .icon-link {
-    color: #ffffff;
-    transition: transform 0.3s, opacity 0.3s;
+    color: #ffffff !important; /* Iconos blancos */
+    text-decoration: none;
     display: flex;
     align-items: center;
+    transition: transform 0.3s;
+}
+
+.icon-link svg {
+    stroke: #ffffff; /* Asegura el color blanco del trazo */
 }
 
 .icon-link:hover {
     transform: scale(1.1);
-    opacity: 0.8;
 }
 
 .footer-nav ul {
@@ -207,40 +172,23 @@ header {
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap; 
+    gap: 50px;
 }
 
 .footer-nav a {
     text-decoration: none;
     color: #ffffff;
-    font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     letter-spacing: 1px;
-    transition: opacity 0.3s;
 }
 
-.footer-nav a:hover {
-    opacity: 0.7;
-}
-
-/* Portafolio Page */
-.page-header {
-    padding: 0 10% 40px 10%;
-}
-
-.page-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-}
-
+/* PORTAFOLIO GRID */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2px;
     background-color: var(--soft-gray);
-    border-top: 1px solid var(--soft-gray);
 }
 
 .project-card {
@@ -249,23 +197,9 @@ header {
     text-decoration: none;
     color: var(--text-main);
     transition: all 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .project-card:hover {
     background-color: var(--accent-color);
     color: #fff;
-}
-
-.card-number {
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.project-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
 }
