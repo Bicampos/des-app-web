@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #fcfaf7;      /* Cremita Hueso */
+    --bg-color: #fcfaf7;      /* Cremita */
     --azul-petroleo: #1a2a3a; /* Azul Fuerte */
     --amarillo: #e9c46a;      /* Amarillo Mostaza */
     --texto-gris: #4a4a4a;    
@@ -50,17 +50,14 @@ header { padding: 40px 10%; }
     align-items: center;
     gap: 40px;
 }
-
-/* Círculo de la foto en AZUL */
 .foto-circulo {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     background-color: #ddd;
-    border: 6px solid var(--azul-petroleo); 
+    border: 6px solid var(--azul-petroleo); /* Círculo AZUL */
     flex-shrink: 0;
 }
-
 .hero-texto h1 {
     font-family: 'Playfair Display', serif;
     font-size: 4rem;
@@ -68,50 +65,88 @@ header { padding: 40px 10%; }
     color: var(--azul-petroleo);
     line-height: 1.1;
 }
-
 .tagline {
     font-size: 1.3rem;
     color: var(--amarillo);
     font-weight: 700;
 }
 
-/* COLUMNAS CV (ESTRUCTURA DE INICIO) */
-.info-columns {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
-    padding: 60px 10%;
-}
-
-/* La franja debajo del título es AMARILLA */
-.col-title {
+/* --- FRANJAS AMARILLAS (INICIO Y PORTAFOLIO) --- */
+/* Este bloque arregla el título de ambas páginas */
+.col-title, .portfolio-header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 800;
     color: var(--azul-petroleo);
     margin-bottom: 25px;
-    border-bottom: 6px solid var(--amarillo); 
+    border-bottom: 6px solid var(--amarillo) !important; /* FORZAMOS AMARILLO */
     display: inline-block;
 }
 
-.highlight {
-    font-weight: 800;
-    color: var(--azul-petroleo);
-    display: block;
+/* ESTRUCTURA DE COLUMNAS / PROYECTOS */
+.info-columns, .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 20px 10% 60px 10%;
 }
 
-/* LISTA DE SKILLS (HACIA ABAJO) */
+/* --- RECUPERAR ICONOS DE HERRAMIENTAS --- */
+.tool-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.tool-icon {
+    width: 35px;
+    height: 35px;
+    background: var(--azul-petroleo);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    flex-shrink: 0; /* Para que no se aplaste */
+}
+
+/* SKILLS */
 .skills-list {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-
 .skill-dot::before {
     content: "●";
     color: var(--amarillo);
     margin-right: 10px;
 }
+
+/* TARJETAS PORTAFOLIO */
+.portfolio-container { padding: 40px 10%; }
+.project-card {
+    background-color: var(--blanco);
+    padding: 50px 30px;
+    text-decoration: none;
+    border: 1px solid #eee;
+    transition: 0.3s;
+    min-height: 220px;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 4px;
+}
+.project-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--azul-petroleo);
+    font-size: 1.8rem;
+}
+.project-card:hover {
+    background-color: var(--azul-petroleo);
+    transform: translateY(-5px);
+}
+.project-card:hover h3 { color: white; }
 
 /* FOOTER */
 .site-footer {
@@ -130,6 +165,6 @@ header { padding: 40px 10%; }
 .footer-nav a { color: white; text-decoration: none; font-weight: 700; }
 
 @media (max-width: 768px) {
-    .info-columns { grid-template-columns: 1fr; }
+    .info-columns, .projects-grid { grid-template-columns: 1fr; }
     .hero-perfil { flex-direction: column; text-align: center; }
 }
