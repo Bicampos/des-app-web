@@ -3,97 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | Diseño Multimedia</title>
+    <title>Portafolio | Bianca</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <nav>
             <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Habilidades</a></li>
-                <li><a href="#educacion">Educación</a></li>
-                <li><a href="#portafolio">Portafolio</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#mi-trabajo">Portafolio</a></li>
+                <li><a href="contacto.html">Contáctame</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="inicio" class="hero">
-            <div class="hero-text">
-                <h1>Hola, soy <span>Bianca</span></h1>
-                <h2>Diseño Multimedia & Creación Visual</h2>
-                <p>Especialista en estructurar ideas complejas a través de la estética, el modelado y la interactividad.</p>
-            </div>
-        </section>
-
-        <section id="sobre-mi">
-            <h2>Habilidades y Herramientas</h2>
-            <p>Me apasiona el diseño limpio y bien estructurado. Estas son las principales herramientas que utilizo para dar vida a mis proyectos:</p>
-            <div class="skills-container">
-                <span class="skill-tag">Animación 2D</span>
-                <span class="skill-tag">Modelado 3D</span>
-                <span class="skill-tag">Fotografía</span>
-                <span class="skill-tag">Ilustración</span>
-                <span class="skill-tag">Infografía</span>
-                <span class="skill-tag">HTML & CSS</span>
-            </div>
-        </section>
-
-        <section id="educacion" class="alt-bg">
-            <h2>Educación</h2>
-            <div class="timeline">
-                <article class="timeline-item">
-                    <h3>Ingeniería en Diseño Multimedia</h3>
-                    <p><strong>Universidad Autónoma del Carmen (UNACAR)</strong></p>
-                    <p class="date">2023 - Presente</p>
-                </article>
-                <article class="timeline-item">
-                    <h3>Educación Media Superior</h3>
-                    <p><strong>UNACAR (Preparatoria)</strong></p>
-                    <p class="date">2020 - 2023</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="portafolio">
-            <h2>Mi Trabajo</h2>
-            <p>Explora mis proyectos haciendo clic en cada categoría.</p>
+        <section class="info-grid">
             
-            <div class="galeria-flex">
-                <article class="card">
-                    <h3>Animación 2D</h3>
-                    <a href="animacion2d.html" class="btn">Ver proyectos</a>
-                </article>
+            <div class="columna">
+                <h2>EDUCACIÓN</h2>
                 
-                <article class="card">
+                <div class="item-edu">
+                    <h3>INGENIERÍA EN DISEÑO MULTIMEDIA</h3>
+                    <p>Universidad Autónoma del Carmen</p>
+                    <p>2023 - A la fecha</p>
+                </div>
+
+                <div class="item-edu">
+                    <h3>PREPARATORIA</h3>
+                    <p>Colegio Nueva Generación</p>
+                    <p>2020 - 2023</p>
+                </div>
+            </div>
+
+            <div class="columna">
+                <h2>CONOCIMIENTOS</h2>
+                
+                <div class="item-herramienta">
+                    <div class="icono ai">Ai</div>
+                    <p>Adobe Illustrator</p>
+                </div>
+
+                <div class="item-herramienta">
+                    <div class="icono ps">Ps</div>
+                    <p>Adobe Photoshop</p>
+                </div>
+                
+                </div>
+
+            <div class="columna">
+                <h2>SKILLS</h2>
+                <div class="skills-lista">
+                    <span class="skill-pill">Creativa</span>
+                    <span class="skill-pill">Perfeccionista</span>
+                    <span class="skill-pill">Versátil</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="mi-trabajo" class="seccion-carrusel">
+            <div class="carrusel-header">
+                <h2>MI TRABAJO 📁</h2>
+                <p>Desliza para ver mis proyectos</p>
+            </div>
+            
+            <div class="carrusel-contenedor">
+                <a href="animacion2d.html" class="tarjeta-carrusel">
+                    <h3>Animación 2D</h3>
+                </a>
+                <a href="infografias.html" class="tarjeta-carrusel">
                     <h3>Infografías</h3>
-                    <a href="infografias.html" class="btn">Ver proyectos</a>
-                </article>
-
-                <article class="card">
+                </a>
+                <a href="modelado3d.html" class="tarjeta-carrusel">
                     <h3>Modelado 3D</h3>
-                    <a href="modelado3d.html" class="btn">Ver proyectos</a>
-                </article>
-
-                <article class="card">
+                </a>
+                <a href="fotografia.html" class="tarjeta-carrusel">
                     <h3>Fotografía</h3>
-                    <a href="fotografia.html" class="btn">Ver proyectos</a>
-                </article>
-
-                <article class="card">
+                </a>
+                <a href="ilustraciones.html" class="tarjeta-carrusel">
                     <h3>Ilustraciones</h3>
-                    <a href="ilustraciones.html" class="btn">Ver proyectos</a>
-                </article>
+                </a>
             </div>
         </section>
     </main>
 
-    <footer id="contacto">
-        <h2>Contáctame</h2>
-        <p>Ciudad del Carmen, Campeche, México</p>
-        <div class="contact-info">
-            <a href="mailto:binnie1
+</body>
+</html>
