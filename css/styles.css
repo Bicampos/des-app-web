@@ -1,7 +1,7 @@
 :root {
     --bg-color: #fcfaf7;      /* Crema Hueso */
     --text-main: #1a2a3a;    /* Azul Petróleo */
-    --accent-color: #c84b31;  /* Terracota */
+    --accent-color: #843424;  /* Terracota */
     --soft-gray: #e5e5e5;
 }
 
@@ -173,13 +173,41 @@ header {
     transform: scale(1.2);
 }
 
-.footer-nav ul {
-    list-style: none;
-    padding: 0; /* CORRECCIÓN: Elimina el espacio invisible que empujaba el menú */
-    margin: 0;
+/* --- ESTILOS DEL FOOTER --- */
+.site-footer {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 60px 10%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.social-icons {
     display: flex;
     justify-content: center;
     gap: 50px;
+    margin-bottom: 35px;
+}
+
+.icon-link {
+    color: #ffffff;
+    transition: transform 0.3s, opacity 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.icon-link:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
     flex-wrap: wrap; 
 }
 
@@ -187,14 +215,14 @@ header {
     text-decoration: none;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
     letter-spacing: 1px;
-    transition: color 0.3s;
+    transition: opacity 0.3s;
 }
 
 .footer-nav a:hover {
-    color: var(--text-main); 
+    opacity: 0.7;
 }
 
 /* Portafolio Page */
