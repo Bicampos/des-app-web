@@ -18,11 +18,11 @@ body {
     line-height: 1.6;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Asegura que el footer quede abajo si hay poco contenido */
+    min-height: 100vh;
 }
 
 main {
-    flex-grow: 1; /* Empuja el footer hacia abajo */
+    flex-grow: 1;
 }
 
 /* Navegación Minimalista Superior */
@@ -51,15 +51,35 @@ header {
     border-bottom: 2px solid var(--accent-color);
 }
 
-/* Hero Section */
+/* --- HERO SECTION CON FOTO CIRCULAR --- */
 .hero-minimal {
-    padding: 100px 10% 60px 10%;
+    padding: 80px 10% 60px 10%;
 }
 
-.hero-minimal h1 {
+.hero-perfil {
+    display: flex;
+    align-items: center; /* Alinea verticalmente la foto con el texto */
+    gap: 40px; /* Separación entre la foto y tu nombre */
+}
+
+.foto-circulo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* Esto hace que sea un círculo perfecto */
+    background-color: #d1cfcb; /* Gris base de tu paleta como placeholder */
+    flex-shrink: 0; /* Evita que el círculo se aplaste */
+    border: 3px solid var(--accent-color); /* Borde sutil color terracota */
+    
+    /* Estas propiedades centrarán tu imagen cuando la añadas */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-texto h1 {
     font-family: 'Playfair Display', serif;
     font-size: 4.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    line-height: 1.1;
 }
 
 .tagline {
@@ -129,7 +149,7 @@ header {
 
 /* --- ESTILOS DEL FOOTER --- */
 .site-footer {
-    background-color: var(--accent-color); /* Usamos el color terracota de acento */
+    background-color: var(--accent-color);
     color: #ffffff;
     padding: 50px 10%;
     text-align: center;
@@ -155,10 +175,12 @@ header {
 
 .footer-nav ul {
     list-style: none;
+    padding: 0; /* CORRECCIÓN: Elimina el espacio invisible que empujaba el menú */
+    margin: 0;
     display: flex;
     justify-content: center;
     gap: 50px;
-    flex-wrap: wrap; /* Por si la pantalla es pequeña */
+    flex-wrap: wrap; 
 }
 
 .footer-nav a {
@@ -172,10 +194,10 @@ header {
 }
 
 .footer-nav a:hover {
-    color: var(--text-main); /* Cambia a azul petróleo al pasar el ratón */
+    color: var(--text-main); 
 }
 
-/* Portafolio Page (para mantener tu código anterior) */
+/* Portafolio Page */
 .page-header {
     padding: 0 10% 40px 10%;
 }
