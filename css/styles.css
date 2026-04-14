@@ -23,7 +23,7 @@ body {
 
 main { flex-grow: 1; }
 
-/* --- NAVEGACIÓN --- */
+/* NAVEGACIÓN */
 header { padding: 40px 10%; }
 .nav-links {
     list-style: none;
@@ -43,7 +43,7 @@ header { padding: 40px 10%; }
     border-bottom: 3px solid var(--amarillo);
 }
 
-/* --- HERO (INICIO) --- */
+/* HERO (INICIO) */
 .hero-minimal { padding: 60px 10%; }
 .hero-perfil {
     display: flex;
@@ -51,7 +51,7 @@ header { padding: 40px 10%; }
     gap: 40px;
 }
 
-/* Círculo de la foto con borde AZUL */
+/* Círculo de la foto en AZUL */
 .foto-circulo {
     width: 150px;
     height: 150px;
@@ -66,26 +66,25 @@ header { padding: 40px 10%; }
     font-size: 4rem;
     font-weight: 900;
     color: var(--azul-petroleo);
-    line-height: 1;
+    line-height: 1.1;
 }
 
 .tagline {
     font-size: 1.3rem;
     color: var(--amarillo);
     font-weight: 700;
-    margin-top: 10px;
 }
 
-/* --- ESTRUCTURA DE COLUMNAS / PORTAFOLIO --- */
-.info-columns, .projects-grid {
+/* COLUMNAS CV (ESTRUCTURA DE INICIO) */
+.info-columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    gap: 60px;
     padding: 60px 10%;
 }
 
-/* La franja debajo del título es AMARILLA (para Inicio y Portafolio) */
-.col-title, .portfolio-header h1 {
+/* La franja debajo del título es AMARILLA */
+.col-title {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 800;
@@ -101,33 +100,24 @@ header { padding: 40px 10%; }
     display: block;
 }
 
-/* --- TARJETAS DE PROYECTOS --- */
-.project-card {
-    background-color: var(--blanco);
-    padding: 40px;
-    text-decoration: none;
-    border: 1px solid #eee;
-    transition: 0.3s;
-    min-height: 200px;
+/* LISTA DE SKILLS (HACIA ABAJO) */
+.skills-list {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    gap: 15px;
 }
-.project-card h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--azul-petroleo);
-    font-size: 1.8rem;
-}
-.project-card:hover {
-    background-color: var(--azul-petroleo);
-    transform: translateY(-5px);
-}
-.project-card:hover h3 { color: white; }
 
-/* --- FOOTER --- */
+.skill-dot::before {
+    content: "●";
+    color: var(--amarillo);
+    margin-right: 10px;
+}
+
+/* FOOTER */
 .site-footer {
     background-color: var(--azul-petroleo);
     color: white;
-    padding: 50px 10%;
+    padding: 60px 10%;
     text-align: center;
 }
 .footer-nav ul {
@@ -140,6 +130,6 @@ header { padding: 40px 10%; }
 .footer-nav a { color: white; text-decoration: none; font-weight: 700; }
 
 @media (max-width: 768px) {
-    .info-columns, .projects-grid { grid-template-columns: 1fr; }
+    .info-columns { grid-template-columns: 1fr; }
     .hero-perfil { flex-direction: column; text-align: center; }
 }
