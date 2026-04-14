@@ -1,8 +1,8 @@
 :root {
     --bg-color: #fcfaf7;      /* Cremita Hueso */
-    --azul-petroleo: #1a2a3a; /* Azul Fuerte (Títulos y Footer) */
-    --amarillo: #e9c46a;      /* Amarillo Mostaza (Acentos) */
-    --texto-gris: #4a4a4a;    /* Gris para lectura cómoda */
+    --azul-petroleo: #1a2a3a; /* Azul Fuerte */
+    --amarillo: #e9c46a;      /* Amarillo Mostaza */
+    --texto-gris: #4a4a4a;    
     --blanco: #ffffff;
 }
 
@@ -16,13 +16,10 @@ body {
     background-color: var(--bg-color);
     color: var(--texto-gris);
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-
-main { flex-grow: 1; }
 
 /* --- NAVEGACIÓN --- */
 header { padding: 40px 10%; }
@@ -36,166 +33,102 @@ header { padding: 40px 10%; }
     text-decoration: none;
     color: var(--azul-petroleo);
     font-weight: 800;
-    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
 }
-.nav-links a.active, .nav-links a:hover {
+.nav-links a.active {
     color: var(--amarillo);
     border-bottom: 3px solid var(--amarillo);
 }
 
-/* --- SECCIÓN INICIO (HERO) --- */
+/* --- HERO (INICIO) --- */
 .hero-minimal { padding: 60px 10%; }
 .hero-perfil {
     display: flex;
     align-items: center;
     gap: 40px;
 }
+
+/* Círculo de la foto ahora en AZUL */
 .foto-circulo {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     background-color: #ddd;
-    border: 4px solid var(--amarillo);
+    border: 5px solid var(--azul-petroleo); 
     flex-shrink: 0;
 }
+
 .hero-texto h1 {
     font-family: 'Playfair Display', serif;
     font-size: 4.5rem;
     font-weight: 900;
     color: var(--azul-petroleo);
-    line-height: 1;
 }
+
 .tagline {
     font-size: 1.3rem;
     color: var(--amarillo);
     font-weight: 600;
 }
 
-/* --- BLOQUE CV (3 COLUMNAS) --- */
+/* --- COLUMNAS (FRANJA AMARILLA) --- */
 .info-columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 60px;
     padding: 60px 10%;
 }
+
+/* La franja debajo del título ahora es AMARILLA */
 .col-title {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 800;
     color: var(--azul-petroleo);
     margin-bottom: 20px;
-    border-bottom: 4px solid var(--amarillo);
+    border-bottom: 5px solid var(--amarillo); 
     display: inline-block;
 }
+
 .highlight {
     font-weight: 800;
     color: var(--azul-petroleo);
     display: block;
 }
-.tool-item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-.tool-icon {
-    width: 32px;
-    height: 32px;
-    background: var(--azul-petroleo);
-    color: var(--blanco);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 0.7rem;
-    border-radius: 5px;
-}
-.skill-dot::before {
-    content: "●";
-    color: var(--amarillo);
-    margin-right: 8px;
-}
 
-/* --- ESTRUCTURA DE LA PÁGINA DE PORTAFOLIO (RESTAURADA) --- */
-.portfolio-container { padding: 40px 10% 80px 10%; }
-.portfolio-header { margin-bottom: 50px; }
-.portfolio-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    color: var(--azul-petroleo);
-    font-weight: 900;
-}
-
+/* --- PORTAFOLIO GRID --- */
+.portfolio-container { padding: 40px 10%; }
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
-
 .project-card {
     background-color: var(--blanco);
     border: 1px solid #eee;
-    padding: 60px 40px;
+    padding: 40px;
     text-decoration: none;
     border-radius: 4px;
-    transition: all 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    min-height: 250px;
+    transition: 0.3s;
 }
-
-.card-num {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 800;
-    color: var(--amarillo);
-    margin-bottom: 10px;
-}
-
-.project-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: var(--azul-petroleo);
-    font-weight: 800;
-}
-
-/* Efecto hover profesional */
 .project-card:hover {
     background-color: var(--azul-petroleo);
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
-.project-card:hover h3 { color: var(--blanco); }
+.project-card:hover h3 { color: white; }
 
-/* --- FOOTER AZUL PETRÓLEO --- */
+/* --- FOOTER --- */
 .site-footer {
     background-color: var(--azul-petroleo);
-    color: var(--blanco);
+    color: white;
     padding: 60px 10%;
     text-align: center;
 }
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 30px;
-}
-.icon-link svg { stroke: var(--blanco); }
 .footer-nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 50px;
-    margin-bottom: 20px;
+    gap: 30px;
+    margin-top: 20px;
 }
-.footer-nav a {
-    text-decoration: none;
-    color: var(--blanco);
-    font-weight: 800;
-}
-.footer-nav a:hover { color: var(--amarillo); }
-.copyright { font-size: 0.8rem; opacity: 0.5; }
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-    .info-columns { grid-template-columns: 1fr; }
-    .hero-perfil { flex-direction: column; text-align: center; }
-    .nav-links, .footer-nav ul { gap: 20px; flex-direction: column; align-items: center; }
-}
+.footer-nav a { color: white; text-decoration: none; font-weight: 700; }
