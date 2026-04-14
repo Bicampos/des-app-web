@@ -3,92 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | Bianca</title>
+    <title>Bianca | Multimedia Design</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#mi-trabajo">Portafolio</a></li>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
                 <li><a href="contacto.html">Contáctame</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="info-grid">
-            
-            <div class="columna">
-                <h2>EDUCACIÓN</h2>
-                
-                <div class="item-edu">
-                    <h3>INGENIERÍA EN DISEÑO MULTIMEDIA</h3>
-                    <p>Universidad Autónoma del Carmen</p>
-                    <p>2023 - A la fecha</p>
-                </div>
-
-                <div class="item-edu">
-                    <h3>PREPARATORIA</h3>
-                    <p>Colegio Nueva Generación</p>
-                    <p>2020 - 2023</p>
-                </div>
-            </div>
-
-            <div class="columna">
-                <h2>CONOCIMIENTOS</h2>
-                
-                <div class="item-herramienta">
-                    <div class="icono ai">Ai</div>
-                    <p>Adobe Illustrator</p>
-                </div>
-
-                <div class="item-herramienta">
-                    <div class="icono ps">Ps</div>
-                    <p>Adobe Photoshop</p>
-                </div>
-                
-                </div>
-
-            <div class="columna">
-                <h2>SKILLS</h2>
-                <div class="skills-lista">
-                    <span class="skill-pill">Creativa</span>
-                    <span class="skill-pill">Perfeccionista</span>
-                    <span class="skill-pill">Versátil</span>
-                </div>
-            </div>
-
+        <section class="hero-minimal">
+            <h1>Bianca Campos</h1>
+            <p class="tagline">Diseñadora Multimedia basada en Ciudad del Carmen.</p>
         </section>
 
-        <section id="mi-trabajo" class="seccion-carrusel">
-            <div class="carrusel-header">
-                <h2>MI TRABAJO 📁</h2>
-                <p>Desliza para ver mis proyectos</p>
+        <section class="info-columns">
+            <div class="column">
+                <h2 class="col-title">Educación</h2>
+                <div class="info-item">
+                    <span class="highlight">Ingeniería en Diseño Multimedia</span>
+                    <p>UNACAR | 2023 — Presente</p>
+                </div>
+                <div class="info-item">
+                    <span class="highlight">Preparatoria</span>
+                    <p>Colegio Nueva Generación | 2020 — 2023</p>
+                </div>
             </div>
-            
-            <div class="carrusel-contenedor">
-                <a href="animacion2d.html" class="tarjeta-carrusel">
-                    <h3>Animación 2D</h3>
-                </a>
-                <a href="infografias.html" class="tarjeta-carrusel">
-                    <h3>Infografías</h3>
-                </a>
-                <a href="modelado3d.html" class="tarjeta-carrusel">
-                    <h3>Modelado 3D</h3>
-                </a>
-                <a href="fotografia.html" class="tarjeta-carrusel">
-                    <h3>Fotografía</h3>
-                </a>
-                <a href="ilustraciones.html" class="tarjeta-carrusel">
-                    <h3>Ilustraciones</h3>
-                </a>
+
+            <div class="column">
+                <h2 class="col-title">Herramientas</h2>
+                <div class="tool-item">
+                    <span class="tool-icon">Ai</span>
+                    <p>Adobe Illustrator</p>
+                </div>
+                <div class="tool-item">
+                    <span class="tool-icon">Ps</span>
+                    <p>Adobe Photoshop</p>
+                </div>
+                <div class="tool-item">
+                    <span class="tool-icon">Bl</span>
+                    <p>Blender 3D</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <h2 class="col-title">Skills</h2>
+                <div class="skills-list">
+                    <span class="skill-dot">Creatividad Conceptual</span>
+                    <span class="skill-dot">Atención al Detalle</span>
+                    <span class="skill-dot">Adaptabilidad Visual</span>
+                </div>
             </div>
         </section>
     </main>
-
 </body>
 </html>
