@@ -1,8 +1,9 @@
 :root {
-    --bg-color: #fcfaf7;      /* Cremita */
+    --bg-color: #fcfaf7;      /* Cremita Hueso */
     --azul-petroleo: #1a2a3a; /* Azul Fuerte (Títulos y Footer) */
     --amarillo: #e9c46a;      /* Amarillo Mostaza (Acentos) */
     --texto-gris: #4a4a4a;    /* Gris para lectura cómoda */
+    --blanco: #ffffff;
 }
 
 * {
@@ -23,7 +24,7 @@ body {
 
 main { flex-grow: 1; }
 
-/* NAVEGACIÓN SUPERIOR */
+/* --- NAVEGACIÓN --- */
 header { padding: 40px 10%; }
 .nav-links {
     list-style: none;
@@ -44,7 +45,7 @@ header { padding: 40px 10%; }
     border-bottom: 3px solid var(--amarillo);
 }
 
-/* HERO: FOTO Y NOMBRE */
+/* --- SECCIÓN INICIO (HERO) --- */
 .hero-minimal { padding: 60px 10%; }
 .hero-perfil {
     display: flex;
@@ -72,7 +73,7 @@ header { padding: 40px 10%; }
     font-weight: 600;
 }
 
-/* COLUMNAS CV */
+/* --- BLOQUE CV (3 COLUMNAS) --- */
 .info-columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -93,14 +94,12 @@ header { padding: 40px 10%; }
     color: var(--azul-petroleo);
     display: block;
 }
-
-/* ICONOS DE HERRAMIENTAS */
 .tool-item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .tool-icon {
     width: 32px;
     height: 32px;
     background: var(--azul-petroleo);
-    color: white;
+    color: var(--blanco);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,44 +107,95 @@ header { padding: 40px 10%; }
     font-size: 0.7rem;
     border-radius: 5px;
 }
-
 .skill-dot::before {
     content: "●";
     color: var(--amarillo);
     margin-right: 8px;
 }
 
-/* FOOTER AZUL PETRÓLEO */
+/* --- ESTRUCTURA DE LA PÁGINA DE PORTAFOLIO (RESTAURADA) --- */
+.portfolio-container { padding: 40px 10% 80px 10%; }
+.portfolio-header { margin-bottom: 50px; }
+.portfolio-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--azul-petroleo);
+    font-weight: 900;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--blanco);
+    border: 1px solid #eee;
+    padding: 60px 40px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 250px;
+}
+
+.card-num {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--amarillo);
+    margin-bottom: 10px;
+}
+
+.project-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--azul-petroleo);
+    font-weight: 800;
+}
+
+/* Efecto hover profesional */
+.project-card:hover {
+    background-color: var(--azul-petroleo);
+    transform: translateY(-10px);
+}
+.project-card:hover h3 { color: var(--blanco); }
+
+/* --- FOOTER AZUL PETRÓLEO --- */
 .site-footer {
     background-color: var(--azul-petroleo);
-    color: white;
-    padding: 50px 10%;
+    color: var(--blanco);
+    padding: 60px 10%;
     text-align: center;
 }
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-bottom: 25px;
+    gap: 40px;
+    margin-bottom: 30px;
 }
+.icon-link svg { stroke: var(--blanco); }
 .footer-nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-bottom: 25px;
+    gap: 50px;
+    margin-bottom: 20px;
 }
 .footer-nav a {
     text-decoration: none;
-    color: white;
+    color: var(--blanco);
     font-weight: 800;
-    font-size: 1rem;
 }
 .footer-nav a:hover { color: var(--amarillo); }
 .copyright { font-size: 0.8rem; opacity: 0.5; }
 
-/* AJUSTE PARA MÓVILES */
+/* RESPONSIVO */
 @media (max-width: 768px) {
     .info-columns { grid-template-columns: 1fr; }
     .hero-perfil { flex-direction: column; text-align: center; }
+    .nav-links, .footer-nav ul { gap: 20px; flex-direction: column; align-items: center; }
 }
