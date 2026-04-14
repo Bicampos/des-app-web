@@ -16,164 +16,206 @@ body {
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el footer quede abajo si hay poco contenido */
 }
 
-/* MENÚ SUPERIOR */
-.header {
-    padding: 30px 10%;
-    background-color: var(--bg-color);
-    border-bottom: 1px solid var(--soft-gray);
+main {
+    flex-grow: 1; /* Empuja el footer hacia abajo */
 }
 
-.main-menu ul {
+/* Navegación Minimalista Superior */
+header {
+    padding: 40px 10%;
+}
+
+.nav-links {
     list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 60px;
+    justify-content: flex-end;
+    gap: 50px;
 }
 
-.main-menu a {
+.nav-links a {
     text-decoration: none;
     color: var(--text-main);
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-transform: uppercase;
     letter-spacing: 2px;
-    transition: color 0.3s;
 }
 
-.main-menu a:hover, .main-menu a.active {
-    color: var(--accent-color);
+.nav-links a.active, .nav-links a:hover {
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent-color);
 }
 
-/* PRESENTACIÓN */
-.presentacion {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    padding: 80px 15%;
+/* Hero Section */
+.hero-minimal {
+    padding: 100px 10% 60px 10%;
 }
 
-.foto-perfil {
-    flex: 1;
-}
-
-.placeholder-foto {
-    width: 300px;
-    height: 350px;
-    background-color: var(--soft-gray);
-    border-radius: 4px; /* Un toque editorial, no circular */
-}
-
-.descripcion {
-    flex: 2;
-}
-
-.descripcion h1 {
+.hero-minimal h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 4.5rem;
+    margin-bottom: 10px;
 }
 
-.descripcion h1 span {
+.tagline {
+    font-size: 1.2rem;
     color: var(--accent-color);
+    font-weight: 300;
 }
 
-.descripcion p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-
-.descripcion span {
-    font-weight: 600;
-}
-
-/* BLOQUE UNIFICADO (EDUCACIÓN, HERRAMIENTAS, SKILLS) */
-.content-bloque {
+/* Columnas de Información */
+.info-columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    padding: 80px 10%;
-    background-color: #fff; /* Fondo blanco para resaltar el bloque */
-    border-top: 1px solid var(--soft-gray);
+    gap: 60px;
+    padding: 60px 10%;
 }
 
-.columna-cv h2 {
+.col-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 30px;
-    color: var(--accent-color);
-    border-bottom: 2px solid var(--accent-color);
-    display: inline-block;
+    border-bottom: 1px solid var(--soft-gray);
+    padding-bottom: 10px;
 }
 
-.item-cv {
-    margin-bottom: 25px;
+.info-item {
+    margin-bottom: 20px;
 }
 
 .highlight {
-    font-weight: 700;
+    font-weight: 600;
     display: block;
-    margin-bottom: 5px;
-}
-
-.lista-herramientas, .lista-skills {
-    list-style: none;
-}
-
-.lista-herramientas li, .lista-skills li {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.tool-tag {
-    width: 35px;
-    height: 35px;
-    background: var(--text-main);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    font-weight: 700;
-    border-radius: 4px;
-}
-
-.lista-skills li::before {
-    content: "—";
     color: var(--accent-color);
 }
 
-/* DESCUBRE MI TRABAJO */
-.descubre-trabajo {
-    text-align: center;
-    padding: 100px 10%;
+/* Herramientas */
+.tool-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
-.descubre-trabajo h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+.tool-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--text-main);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+
+.skill-dot::before {
+    content: "•";
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.skill-dot {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* --- ESTILOS DEL FOOTER --- */
+.site-footer {
+    background-color: var(--accent-color); /* Usamos el color terracota de acento */
+    color: #ffffff;
+    padding: 50px 10%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
     margin-bottom: 30px;
 }
 
-.portafolio-button {
+.icon-link {
     text-decoration: none;
+    font-size: 2rem;
+    transition: transform 0.3s;
+}
+
+.icon-link:hover {
+    transform: scale(1.2);
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Por si la pantalla es pequeña */
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--text-main); /* Cambia a azul petróleo al pasar el ratón */
+}
+
+/* Portafolio Page (para mantener tu código anterior) */
+.page-header {
+    padding: 0 10% 40px 10%;
+}
+
+.page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2px;
+    background-color: var(--soft-gray);
+    border-top: 1px solid var(--soft-gray);
+}
+
+.project-card {
+    background-color: var(--bg-color);
+    padding: 80px 40px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
     background-color: var(--accent-color);
-    color: white;
-    padding: 15px 40px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    transition: background 0.3s;
+    color: #fff;
 }
 
-.portafolio-button:hover {
-    background-color: var(--text-main);
-}
-
-footer {
-    text-align: center;
-    padding: 40px;
+.card-number {
     font-size: 0.8rem;
-    color: #888;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.project-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
 }
