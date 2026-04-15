@@ -100,29 +100,34 @@ main { flex-grow: 1; }
     padding: 20px 10% 60px 10%;
 }
 
-/* --- HERRAMIENTAS (CUADRITOS) --- */
-.tool-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
+/* --- HERRAMIENTAS (CUADRITOS CON IMAGEN) --- */
+.tool-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    margin-bottom: 15px; 
 }
 
 .tool-icon {
-    width: 40px;
-    height: 40px;
-    background-color: var(--azul-petroleo);
-    border-radius: 6px;
+    width: 45px; /* Un poco más grande para que luzcan los logos */
+    height: 45px;
+    background-color: var(--blanco); /* Fondo blanco en lugar de azul para que resalte el logo */
+    border-radius: 8px; /* Bordes un poco más redondeados */
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Esto evita que la foto se salga de las esquinas redondeadas */
+    box-shadow: 0 4px 10px rgba(26, 42, 58, 0.08); /* Sombra suave para que parezcan botones */
+    overflow: hidden; /* Esto es vital: corta cualquier cosa que se salga del borde */
+    padding: 5px; /* Un pequeño margen interno para que la imagen respire */
+    flex-shrink: 0; /* Evita que el contenedor se aplaste */
 }
 
+/* Regla estricta para la imagen dentro del cuadrito */
 .tool-icon img {
-    width: 100%; /* Ajusta este porcentaje para que el icono tenga un poco de margen interno */
+    width: 100%;
     height: 100%;
-    object-fit: contain; /* Mantiene la proporción de la imagen sin deformarla */
+    object-fit: contain; /* Obliga a la imagen a caber entera dentro del cuadro, sin deformarse */
+    display: block; /* Elimina márgenes extraños debajo de la imagen */
 }
 
 /* --- SKILLS EN LISTA --- */
