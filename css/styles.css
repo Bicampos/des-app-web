@@ -448,17 +448,20 @@ main { flex-grow: 1; }
     transform: translateY(-5px); /* Se levantan un poquito al pasar el cursor */
 }
 
-/* --- DISEÑO DE GALERÍA LIMPIA --- */
+/* --- CORRECCIÓN DE GALERÍA (TÍTULO Y BLOQUES) --- */
 
+/* 1. Quitamos el flex del contenedor principal para que el título respire normal */
 .project-detail-container {
     padding: 0 10% 100px 10%;
+    width: 100%;
 }
 
-/* Espaciado del Título Principal con el Menú */
+/* 2. El título vuelve a su diseño original centrado */
 .portfolio-section-header-clean {
     text-align: center;
-    margin-top: 100px; /* <--- Espacio para que no choque con el menú */
-    margin-bottom: 80px; /* <--- Espacio antes de que empiecen las fotos */
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 80px;
 }
 
 .portfolio-section-header-clean h1 {
@@ -466,61 +469,81 @@ main { flex-grow: 1; }
     font-size: 3.5rem;
     font-weight: 900;
     color: var(--azul-petroleo);
+    display: block; /* Asegura que ocupe su propia línea */
 }
 
 .project-showcase {
     display: flex;
     flex-direction: column;
-    gap: 150px; /* <--- Mucho espacio entre bloques para limpieza visual */
+    gap: 60px; /* <--- Bajamos de 120px/150px a solo 60px para que estén más cerca */
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
+/* --- ALINEACIÓN CORREGIDA PARA FOTOGRAFÍA --- */
 
 .project-block {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr; 
-    gap: 80px; /* Espacio entre foto y texto */
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
     align-items: center;
+    margin-bottom: 40px; /* <--- Reducimos este margen también */
+}
+/* Proyecto Impar (Foto Izquierda, Texto Derecha) */
+.project-block:nth-child(odd) {
+    text-align: left;
 }
 
-/* El Zigzag: Proyectos pares invierten posición */
+/* Proyecto Par (Foto Derecha, Texto Izquierda) */
 .project-block:nth-child(even) {
-    direction: rtl; 
+    text-align: right; /* Alineamos el texto a la derecha para que "toque" la foto */
+}
+
+/* Invertimos el orden de las columnas en los pares sin romper la dirección del texto */
+.project-block:nth-child(even) .project-image-frame {
+    grid-column: 2; /* Mueve la foto a la derecha */
 }
 
 .project-block:nth-child(even) .project-text-content {
-    direction: ltr; 
+    grid-column: 1; /* Mueve el texto a la izquierda */
+    grid-row: 1;    /* Asegura que estén en la misma fila */
 }
 
-/* MARCO DE LA FOTO (Limpiado) */
+/* MARCO DE LA FOTO (Ajustado) */
 .project-image-frame {
-    background-color: var(--blanco);
-    border-radius: 30px; /* Bordes bien redonditos */
+    width: 100%;
+    max-width: 500px; /* Un poco más grande para fotografía */
+    border-radius: 30px;
     overflow: hidden;
-    box-shadow: 0 15px 45px rgba(26, 42, 58, 0.08);
-    aspect-ratio: 16 / 10; /* Formato un poco más alto para multimedia */
-    border: 1px solid rgba(26, 42, 58, 0.03);
+    box-shadow: 0 15px 35px rgba(26, 42, 58, 0.1);
 }
 
 .project-image-frame img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
 }
 
-/* TEXTO DEL PROYECTO (Limpiado) */
+/* TEXTO DEL PROYECTO */
+.project-text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .project-text-content h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--azul-petroleo);
-    margin-bottom: 25px;
-    line-height: 1.1;
+    margin-bottom: 10px;
 }
 
 .project-text-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1rem;
     color: var(--texto-gris);
-    max-width: 500px;
+    line-height: 1.6;
 }
+
 
 /* Para pantallas de celular */
 @media (max-width: 900px) {
@@ -530,4 +553,114 @@ main { flex-grow: 1; }
         gap: 40px;
     }
     .portfolio-section-header-clean { margin-top: 60px; }
+}
+
+/* --- DISEÑO TRÍPTICO COMPACTO AL LADO DEL TEXTO --- */
+
+.project-block-compact {
+    display: grid;
+    /* La primera columna (fotos) es más ancha que la del texto */
+    grid-template-columns: 1.2fr 0.8fr; 
+    gap: 40px; /* Espacio moderado entre el bloque de fotos y el texto */
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 120px auto;
+}
+
+/* Contenedor de las 3 fotos juntas */
+.compact-triptych {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px; /* <--- ESPACIO MÍNIMO entre las fotos para que se vean juntas */
+    background-color: var(--blanco);
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(26, 42, 58, 0.06);
+    border: 1px solid rgba(26, 42, 58, 0.03);
+}
+
+.triptych-frame {
+    height: 180px; /* Altura controlada para que no sean gigantes */
+    overflow: hidden;
+    border-radius: 15px; /* Redondeado interno más pequeño */
+}
+
+.triptych-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Efecto hover individual */
+.triptych-frame:hover img {
+    transform: scale(1.1);
+}
+
+/* Alineación del texto al lado */
+.project-text-side {
+    text-align: left;
+}
+
+.project-text-side h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--azul-petroleo);
+    margin-bottom: 15px;
+}
+
+.project-text-side p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--texto-gris);
+    max-width: 400px;
+}
+
+/* Zigzag opcional: Si quieres que el siguiente proyecto invierta lados */
+.project-block-compact:nth-child(even) {
+    direction: rtl;
+}
+.project-block-compact:nth-child(even) .project-text-side {
+    direction: ltr;
+}
+
+/* Ajuste para tablets/móvil */
+@media (max-width: 900px) {
+    .project-block-compact {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .compact-triptych {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* --- AJUSTE ESPECÍFICO PARA VIDEOS --- */
+
+/* Buscamos el marco que contiene un video */
+.project-image-frame:has(video) {
+    /* 1. Le devolvemos una proporción horizontal fija (16:9 es el estándar de video) */
+    aspect-ratio: 16 / 9; 
+    
+    /* 2. Nos aseguramos de que no se estire demasiado */
+    width: 100%;
+    max-width: 550px; /* Un poco más grande que las fotos para que luzca */
+    
+    /* 3. Mantenemos la estética de los marcos */
+    background-color: #000; /* Fondo negro para que no se vea blanco si tarda en cargar */
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(26, 42, 58, 0.1);
+    justify-self: center; /* Lo centramos en su columna */
+}
+
+/* Nos aseguramos de que el video llene el marco */
+.project-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* O 'contain' si no quieres que se corte nada de la animación */
 }
