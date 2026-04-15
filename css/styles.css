@@ -100,6 +100,11 @@ main { flex-grow: 1; }
     padding: 20px 10% 60px 10%;
 }
 
+/* --- ESPACIO PARA EDUCACIÓN --- */
+.info-item {
+    margin-bottom: 25px; /* Esto fuerza el salto de línea y la separación */
+}
+
 /* --- HERRAMIENTAS (LA ÚNICA PARTE QUE CAMBIÓ) --- */
 .tool-item { 
     display: flex; 
