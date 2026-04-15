@@ -23,7 +23,7 @@ body {
 
 main { flex-grow: 1; }
 
-/* --- MENÚ OVALADO CON TUS COLORES --- */
+/* MENÚ OVALADO */
 .header-main {
     padding: 30px 10% 10px 10%;
     display: flex;
@@ -73,7 +73,7 @@ main { flex-grow: 1; }
     background-color: #ddd;
     border: 6px solid var(--azul-petroleo);
     flex-shrink: 0;
-    overflow: hidden; /* IMPORTANTE: Esto corta todo lo que se salga del círculo */
+    overflow: hidden; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,7 +82,7 @@ main { flex-grow: 1; }
 .foto-circulo img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* IMPORTANTE: Esto hace que tu foto llene el círculo sin aplastarse */
+    object-fit: cover;
 }
 
 .hero-texto h1 {
@@ -93,7 +93,7 @@ main { flex-grow: 1; }
     line-height: 1.1;
 }
 
-/* --- FRANJAS AMARILLAS BAJO TÍTULOS --- */
+/* FRANJAS AMARILLAS BAJO TÍTULOS */
 .col-title, .portfolio-header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
@@ -104,7 +104,7 @@ main { flex-grow: 1; }
     display: inline-block;
 }
 
-/* --- COLUMNAS (3 COL) --- */
+/* --- COLUMNAS (3 COL) */
 .info-columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -112,12 +112,12 @@ main { flex-grow: 1; }
     padding: 20px 10% 60px 10%;
 }
 
-/* --- ESPACIO PARA EDUCACIÓN --- */
+/* ESPACIO PARA EDUCACIÓN */
 .info-item {
     margin-bottom: 25px; /* Esto fuerza el salto de línea y la separación */
 }
 
-/* --- HERRAMIENTAS (LA ÚNICA PARTE QUE CAMBIÓ) --- */
+/* HERRAMIENTAS  */
 .tool-item { 
     display: flex; 
     align-items: center; 
@@ -125,7 +125,7 @@ main { flex-grow: 1; }
     margin-bottom: 15px; 
 }
 
-/* Regla para Canva, Blender, CapCut */
+
 .tool-icon {
     width: 36px;  
     height: 36px; 
@@ -137,17 +137,17 @@ main { flex-grow: 1; }
     box-shadow: 0 4px 10px rgba(26, 42, 58, 0.08); 
     overflow: hidden; 
     flex-shrink: 0; 
-    padding: 4px; /* Un margencito para que no se corten */
+    padding: 4px; 
 }
 
 .tool-icon img {
     width: 100%; 
     height: 100%; 
-    object-fit: contain; /* Para que quepan enteros sin cortarse */
+    object-fit: contain; 
     display: block; 
 }
 
-/* Regla para Ai y Ps (rellenan todo) */
+
 .tool-icon.icono-lleno {
     padding: 0; 
     background-color: transparent; 
@@ -156,7 +156,7 @@ main { flex-grow: 1; }
 .tool-icon.icono-lleno img {
     object-fit: cover; 
 }
-/* ----------------------------------------------- */
+
 
 /* --- SKILLS EN LISTA --- */
 .skills-list {
@@ -178,17 +178,17 @@ main { flex-grow: 1; }
     margin-right: 12px;
 }
 
-/* --- HEADER GALERÍA (Corregido) --- */
+/* HEADER GALERÍA  */
 .portfolio-header-galeria {
     text-align: center;
-    margin-top: 60px; /* <--- Esto lo empuja hacia abajo, separándolo del menú */
+    margin-top: 60px; 
     margin-bottom: 70px;
     padding: 0 10%;
 }
 
 .portfolio-header-galeria h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem; /* <--- Bájalo un poquito aquí */
+    font-size: 3.5rem; 
     font-weight: 900; 
     color: var(--azul-petroleo);
     margin-bottom: 20px;
@@ -203,7 +203,7 @@ main { flex-grow: 1; }
     line-height: 1.6;
 }
 
-/* --- PORTAFOLIO BENTO GRID (ASIMÉTRICO) --- */
+/* PORTAFOLIO BENTO GRID (ASIMÉTRICO)  */
 .portfolio-container { 
     padding: 40px 0; 
 }
@@ -221,12 +221,12 @@ main { flex-grow: 1; }
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
     gap: 30px;
-    padding: 0 10% 80px 10%; /* Márgenes laterales correctos */
+    padding: 0 10% 80px 10%; 
 }
 
 /* La Tarjeta Base */
 .bento-card {
-    min-height: 400px; /* Altura elegante tipo póster */
+    min-height: 400px; 
     background-color: var(--blanco);
     border: 1px solid rgba(26, 42, 58, 0.05);
     border-radius: 24px;
@@ -241,12 +241,11 @@ main { flex-grow: 1; }
     box-shadow: 0 4px 10px rgba(0,0,0,0.02);
 }
 
-/* --- LA MAGIA ASIMÉTRICA --- */
-/* La primera tarjeta ocupará 2 columnas (es la más importante) */
+
 .bento-card:nth-child(1) {
     grid-column: span 2;
 }
-/* Las demás ocupan 1 columna normal */
+
 .bento-card:nth-child(2),
 .bento-card:nth-child(3),
 .bento-card:nth-child(4),
@@ -254,13 +253,13 @@ main { flex-grow: 1; }
     grid-column: span 1;
 }
 
-/* El número de fondo (Más discreto y elegante) */
+
 .giant-num {
     position: absolute;
-    top: 10px; /* Lo bajamos un poquito para que respire */
-    right: 20px; /* Lo despegamos de la orilla */
+    top: 10px; 
+    right: 20px; 
     font-family: 'Playfair Display', serif;
-    font-size: 6rem; /* ¡Reducido a la mitad! (antes era 12rem) */
+    font-size: 6rem; 
     font-weight: 900;
     color: rgba(233, 196, 106, 0.15); 
     transition: all 0.5s ease;
@@ -269,7 +268,7 @@ main { flex-grow: 1; }
     pointer-events: none; 
 }
 
-/* Textos más visibles */
+
 .card-info {
     position: relative;
     z-index: 2;
@@ -284,7 +283,7 @@ main { flex-grow: 1; }
     transition: color 0.4s ease;
 }
 
-/* Botón oculto "Ver Proyecto" */
+
 .view-project {
     color: var(--amarillo);
     font-weight: 800;
@@ -299,7 +298,7 @@ main { flex-grow: 1; }
     gap: 8px;
 }
 
-/* --- LA INTERACTIVIDAD AL PASAR EL RATÓN (Intacta) --- */
+
 .bento-card:hover {
     background-color: var(--azul-petroleo);
     transform: translateY(-10px);
@@ -321,13 +320,13 @@ main { flex-grow: 1; }
     transform: translateY(0); 
 }
 
-/* --- RESPONSIVE (Para celulares) --- */
+
 @media (max-width: 900px) {
     .bento-grid {
-        grid-template-columns: 1fr; /* Todo en 1 sola columna en celular */
+        grid-template-columns: 1fr; 
     }
     .bento-card:nth-child(1) {
-        grid-column: span 1; /* Se quita lo ancho en pantallas pequeñas */
+        grid-column: span 1; 
     }
 }
 
@@ -353,7 +352,7 @@ main { flex-grow: 1; }
     font-weight: 800;
 }
 
-/* Esta es la regla mágica para cuando pasas el ratón */
+
 .footer-nav a:hover {
     color: var(--blanco);
 }
@@ -365,7 +364,7 @@ main { flex-grow: 1; }
     .hero-perfil { flex-direction: column; text-align: center; }
 }
 
-/* --- DISEÑO DE CONTACTO ESTÉTICO --- */
+/*  DISEÑO DE CONTACTO ESTÉTICO  */
 .contacto-container {
     display: flex;
     justify-content: center;
@@ -375,7 +374,7 @@ main { flex-grow: 1; }
 }
 
 .contacto-card {
-    background-color: var(--azul-petroleo); /* Bloque azul elegante */
+    background-color: var(--azul-petroleo); 
     color: white;
     padding: 60px;
     border-radius: 30px;
@@ -405,7 +404,7 @@ main { flex-grow: 1; }
 }
 
 .btn-contacto {
-    background-color: var(--amarillo); /* Botones amarillos como tu referencia */
+    background-color: var(--amarillo);
     color: var(--azul-petroleo);
     text-decoration: none;
     padding: 15px 35px;
@@ -431,32 +430,32 @@ main { flex-grow: 1; }
     margin-top: 0;
 }
 
-/* --- ICONOS REDES SOCIALES --- */
+/* ICONOS REDES SOCIALES */
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 40px; /* Aquí controlas qué tan separados están. Puedes subirlo a 50px o 60px */
-    margin-bottom: 25px; /* Esto da un espacio hacia abajo, para separarlos del menú INICIO */
+    gap: 40px; 
+    margin-bottom: 25px; 
 }
 
-/* Opcional: Para que al pasar el mouse tengan una pequeña animación */
+
 .icon-link {
     transition: transform 0.3s ease;
 }
 
 .icon-link:hover {
-    transform: translateY(-5px); /* Se levantan un poquito al pasar el cursor */
+    transform: translateY(-5px); 
 }
 
-/* --- CORRECCIÓN DE GALERÍA (TÍTULO Y BLOQUES) --- */
+/* CORRECCIÓN DE GALERÍA */
 
-/* 1. Quitamos el flex del contenedor principal para que el título respire normal */
+
 .project-detail-container {
     padding: 0 10% 100px 10%;
     width: 100%;
 }
 
-/* 2. El título vuelve a su diseño original centrado */
+
 .portfolio-section-header-clean {
     text-align: center;
     width: 100%;
@@ -469,47 +468,47 @@ main { flex-grow: 1; }
     font-size: 3.5rem;
     font-weight: 900;
     color: var(--azul-petroleo);
-    display: block; /* Asegura que ocupe su propia línea */
+    display: block; 
 }
 
 .project-showcase {
     display: flex;
     flex-direction: column;
-    gap: 60px; /* <--- Bajamos de 120px/150px a solo 60px para que estén más cerca */
+    gap: 60px; 
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
 }
-/* --- ALINEACIÓN CORREGIDA PARA FOTOGRAFÍA --- */
+/* ALINEACIÓN CORREGIDA PARA FOTOGRAFÍA */
 
 .project-block {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     gap: 40px; 
     align-items: center;
-    margin-bottom: 40px; /* <--- Reducimos este margen también */
+    margin-bottom: 40px; 
 }
-/* Proyecto Impar (Foto Izquierda, Texto Derecha) */
+
 .project-block:nth-child(odd) {
     text-align: left;
 }
 
-/* Proyecto Par (Foto Derecha, Texto Izquierda) */
+
 .project-block:nth-child(even) {
-    text-align: right; /* Alineamos el texto a la derecha para que "toque" la foto */
+    text-align: right; 
 }
 
-/* Invertimos el orden de las columnas en los pares sin romper la dirección del texto */
+
 .project-block:nth-child(even) .project-image-frame {
     grid-column: 2; /* Mueve la foto a la derecha */
 }
 
 .project-block:nth-child(even) .project-text-content {
     grid-column: 1; /* Mueve el texto a la izquierda */
-    grid-row: 1;    /* Asegura que estén en la misma fila */
+    grid-row: 1;  
 }
 
-/* MARCO DE LA FOTO (Ajustado) */
+/* MARCO DE LA FOTO */
 .project-image-frame {
     width: 100%;
     max-width: 500px; /* Un poco más grande para fotografía */
@@ -555,11 +554,10 @@ main { flex-grow: 1; }
     .portfolio-section-header-clean { margin-top: 60px; }
 }
 
-/* --- DISEÑO TRÍPTICO COMPACTO AL LADO DEL TEXTO --- */
+/*  DISEÑO TRÍPTICO  */
 
 .project-block-compact {
     display: grid;
-    /* La primera columna (fotos) es más ancha que la del texto */
     grid-template-columns: 1.2fr 0.8fr; 
     gap: 40px; /* Espacio moderado entre el bloque de fotos y el texto */
     align-items: center;
@@ -618,7 +616,7 @@ main { flex-grow: 1; }
     max-width: 400px;
 }
 
-/* Zigzag opcional: Si quieres que el siguiente proyecto invierta lados */
+/* Zigzag opcional */
 .project-block-compact:nth-child(even) {
     direction: rtl;
 }
@@ -638,29 +636,25 @@ main { flex-grow: 1; }
     }
 }
 
-/* --- AJUSTE ESPECÍFICO PARA VIDEOS --- */
+/* AJUSTE ESPECÍFICO PARA VIDEOS */
 
-/* Buscamos el marco que contiene un video */
 .project-image-frame:has(video) {
-    /* 1. Le devolvemos una proporción horizontal fija (16:9 es el estándar de video) */
+    
     aspect-ratio: 16 / 9; 
     
-    /* 2. Nos aseguramos de que no se estire demasiado */
     width: 100%;
-    max-width: 550px; /* Un poco más grande que las fotos para que luzca */
+    max-width: 550px; 
     
-    /* 3. Mantenemos la estética de los marcos */
-    background-color: #000; /* Fondo negro para que no se vea blanco si tarda en cargar */
+    background-color: #000; 
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(26, 42, 58, 0.1);
-    justify-self: center; /* Lo centramos en su columna */
+    justify-self: center; 
 }
 
-/* Nos aseguramos de que el video llene el marco */
 .project-video {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover; /* O 'contain' si no quieres que se corte nada de la animación */
+    object-fit: cover; 
 }
