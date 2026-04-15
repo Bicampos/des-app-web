@@ -1,8 +1,8 @@
 :root {
-    --bg-color: #fcfaf7;
-    --azul-petroleo: #1a2a3a;
-    --amarillo: #e9c46a;
-    --texto-gris: #4a4a4a;
+    --bg-color: #fcfaf7;      /* Cremita Hueso */
+    --azul-petroleo: #1a2a3a; /* Azul Fuerte */
+    --amarillo: #e9c46a;      /* Amarillo Mostaza */
+    --texto-gris: #4a4a4a;    
     --blanco: #ffffff;
 }
 
@@ -16,43 +16,52 @@ body {
     background-color: var(--bg-color);
     color: var(--texto-gris);
     font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* --- MENÚ OVALADO (SEGUNDA FOTO) --- */
+main { flex-grow: 1; }
+
+/* --- MENÚ OVALADO CON TUS COLORES --- */
 .header-main {
-    padding: 30px 10%;
+    padding: 30px 10% 10px 10%;
     display: flex;
     justify-content: flex-end;
+    position: sticky; /* Esto hace que el menú te siga al bajar */
+    top: 0;
+    z-index: 1000;
 }
 
 .nav-oval {
-    background-color: #ededff; /* Color lilita suave como tu foto */
-    padding: 15px 40px;
-    border-radius: 50px; /* Hace el óvalo */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    background-color: var(--blanco);
+    padding: 12px 35px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(26, 42, 58, 0.1);
+    border: 1px solid rgba(26, 42, 58, 0.05);
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 35px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #1a1a8b; /* Azul del menú original */
-    font-weight: 700;
-    font-size: 0.9rem;
-    padding-bottom: 5px;
+    color: var(--azul-petroleo);
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    padding: 5px 0;
     transition: 0.3s;
 }
 
-/* Línea amarilla de selección */
 .nav-links a.active, .nav-links a:hover {
-    border-bottom: 3px solid var(--amarillo);
+    border-bottom: 4px solid var(--amarillo);
 }
 
-/* --- HERO --- */
+/* --- HERO (INICIO) --- */
 .hero-minimal { padding: 60px 10%; }
 .hero-perfil { display: flex; align-items: center; gap: 40px; }
 
@@ -61,7 +70,7 @@ body {
     height: 150px;
     border-radius: 50%;
     background-color: #ddd;
-    border: 5px solid var(--azul-petroleo);
+    border: 6px solid var(--azul-petroleo);
     flex-shrink: 0;
 }
 
@@ -70,17 +79,11 @@ body {
     font-size: 4rem;
     font-weight: 900;
     color: var(--azul-petroleo);
+    line-height: 1.1;
 }
 
-/* --- COLUMNAS Y FRANJAS AMARILLAS --- */
-.info-columns {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-    padding: 40px 10% 80px 10%;
-}
-
-.col-title {
+/* --- FRANJAS AMARILLAS BAJO TÍTULOS --- */
+.col-title, .portfolio-header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 800;
@@ -88,6 +91,14 @@ body {
     margin-bottom: 25px;
     border-bottom: 6px solid var(--amarillo);
     display: inline-block;
+}
+
+/* --- COLUMNAS (3 COL) --- */
+.info-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 20px 10% 60px 10%;
 }
 
 /* --- HERRAMIENTAS (CUADRITOS) --- */
@@ -109,16 +120,17 @@ body {
     font-weight: 800;
     font-size: 0.8rem;
     border-radius: 6px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
 
 /* --- SKILLS EN LISTA --- */
 .skills-list {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .skills-list li {
-    margin-bottom: 12px;
     font-size: 1.1rem;
     display: flex;
     align-items: center;
@@ -129,6 +141,44 @@ body {
     color: var(--amarillo);
     margin-right: 12px;
 }
+
+/* --- PORTAFOLIO GRID --- */
+.portfolio-container { padding: 40px 10%; }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--blanco);
+    padding: 40px;
+    text-decoration: none;
+    border: 1px solid #eee;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: 0.3s;
+}
+
+.card-num {
+    color: var(--amarillo);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.project-card h3 {
+    color: var(--azul-petroleo);
+    font-family: 'Playfair Display', serif;
+}
+
+.project-card:hover {
+    background-color: var(--azul-petroleo);
+    transform: translateY(-5px);
+}
+
+.project-card:hover h3, .project-card:hover .card-num { color: white; }
 
 /* --- FOOTER AMARILLO --- */
 .site-footer {
@@ -153,3 +203,8 @@ body {
 }
 
 .icon-link svg { stroke: var(--azul-petroleo); }
+
+@media (max-width: 768px) {
+    .info-columns, .projects-grid { grid-template-columns: 1fr; }
+    .hero-perfil { flex-direction: column; text-align: center; }
+}
