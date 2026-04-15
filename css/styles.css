@@ -64,13 +64,12 @@ main { flex-grow: 1; }
 .hero-minimal { padding: 60px 10%; }
 .hero-perfil { display: flex; align-items: center; gap: 40px; }
 
-.foto-circulo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-color: #ddd;
-    border: 6px solid var(--azul-petroleo);
-    flex-shrink: 0;
+/* Asegura que la imagen ocupe todo el círculo y se recorte correctamente */
+.foto-circulo img {
+  width: 100%; /* Ancho completo del círculo */
+  height: 100%; /* Alto completo del círculo */
+  object-fit: cover; /* Recorta la imagen para que encaje sin deformarse */
+  border-radius: 50%; /* Mantiene la forma circular */
 }
 
 .hero-texto h1 {
