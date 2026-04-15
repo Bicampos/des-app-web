@@ -178,43 +178,158 @@ main { flex-grow: 1; }
     margin-right: 12px;
 }
 
-/* --- PORTAFOLIO GRID --- */
-.portfolio-container { padding: 40px 10%; }
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+/* --- HEADER GALERÍA (Corregido) --- */
+.portfolio-header-galeria {
+    text-align: center;
+    margin-top: 60px; /* <--- Esto lo empuja hacia abajo, separándolo del menú */
+    margin-bottom: 70px;
+    padding: 0 10%;
 }
 
-.project-card {
+.portfolio-header-galeria h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem; /* <--- Bájalo un poquito aquí */
+    font-weight: 900; 
+    color: var(--azul-petroleo);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.portfolio-header-galeria p {
+    font-size: 1.1rem;
+    color: var(--texto-gris);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- PORTAFOLIO BENTO GRID (ASIMÉTRICO) --- */
+.portfolio-container { 
+    padding: 40px 0; 
+}
+
+.portfolio-header { 
+    padding: 0 10%; 
+    margin-bottom: 40px; 
+}
+
+.bento-wrapper {
+    width: 100%;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 30px;
+    padding: 0 10% 80px 10%; /* Márgenes laterales correctos */
+}
+
+/* La Tarjeta Base */
+.bento-card {
+    min-height: 400px; /* Altura elegante tipo póster */
     background-color: var(--blanco);
-    padding: 40px;
+    border: 1px solid rgba(26, 42, 58, 0.05);
+    border-radius: 24px;
     text-decoration: none;
-    border: 1px solid #eee;
-    min-height: 220px;
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    transition: 0.3s;
+    padding: 40px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
 }
 
-.card-num {
+/* --- LA MAGIA ASIMÉTRICA --- */
+/* La primera tarjeta ocupará 2 columnas (es la más importante) */
+.bento-card:nth-child(1) {
+    grid-column: span 2;
+}
+/* Las demás ocupan 1 columna normal */
+.bento-card:nth-child(2),
+.bento-card:nth-child(3),
+.bento-card:nth-child(4),
+.bento-card:nth-child(5) {
+    grid-column: span 1;
+}
+
+/* El número de fondo (Más discreto y elegante) */
+.giant-num {
+    position: absolute;
+    top: 10px; /* Lo bajamos un poquito para que respire */
+    right: 20px; /* Lo despegamos de la orilla */
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem; /* ¡Reducido a la mitad! (antes era 12rem) */
+    font-weight: 900;
+    color: rgba(233, 196, 106, 0.15); 
+    transition: all 0.5s ease;
+    line-height: 1;
+    z-index: 1;
+    pointer-events: none; 
+}
+
+/* Textos más visibles */
+.card-info {
+    position: relative;
+    z-index: 2;
+}
+
+.bento-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem; 
+    color: var(--azul-petroleo);
+    line-height: 1.1;
+    margin-bottom: 10px;
+    transition: color 0.4s ease;
+}
+
+/* Botón oculto "Ver Proyecto" */
+.view-project {
     color: var(--amarillo);
     font-weight: 800;
-    margin-bottom: 10px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0;
+    transform: translateY(15px); 
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.project-card h3 {
-    color: var(--azul-petroleo);
-    font-family: 'Playfair Display', serif;
-}
-
-.project-card:hover {
+/* --- LA INTERACTIVIDAD AL PASAR EL RATÓN (Intacta) --- */
+.bento-card:hover {
     background-color: var(--azul-petroleo);
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(26, 42, 58, 0.2);
+    border-color: var(--azul-petroleo);
 }
 
-.project-card:hover h3, .project-card:hover .card-num { color: white; }
+.bento-card:hover h3 {
+    color: var(--blanco);
+}
+
+.bento-card:hover .giant-num {
+    color: rgba(255, 255, 255, 0.05); 
+    transform: scale(1.1) rotate(-5deg); 
+}
+
+.bento-card:hover .view-project {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+/* --- RESPONSIVE (Para celulares) --- */
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: 1fr; /* Todo en 1 sola columna en celular */
+    }
+    .bento-card:nth-child(1) {
+        grid-column: span 1; /* Se quita lo ancho en pantallas pequeñas */
+    }
+}
 
 /* --- FOOTER AMARILLO --- */
 .site-footer {
@@ -236,6 +351,11 @@ main { flex-grow: 1; }
     color: var(--azul-petroleo);
     text-decoration: none;
     font-weight: 800;
+}
+
+/* Esta es la regla mágica para cuando pasas el ratón */
+.footer-nav a:hover {
+    color: var(--blanco);
 }
 
 .icon-link svg { stroke: var(--azul-petroleo); }
@@ -309,4 +429,105 @@ main { flex-grow: 1; }
 /* Ajuste del Footer en contacto */
 .contacto-container + .site-footer {
     margin-top: 0;
+}
+
+/* --- ICONOS REDES SOCIALES --- */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Aquí controlas qué tan separados están. Puedes subirlo a 50px o 60px */
+    margin-bottom: 25px; /* Esto da un espacio hacia abajo, para separarlos del menú INICIO */
+}
+
+/* Opcional: Para que al pasar el mouse tengan una pequeña animación */
+.icon-link {
+    transition: transform 0.3s ease;
+}
+
+.icon-link:hover {
+    transform: translateY(-5px); /* Se levantan un poquito al pasar el cursor */
+}
+
+/* --- DISEÑO DE GALERÍA LIMPIA --- */
+
+.project-detail-container {
+    padding: 0 10% 100px 10%;
+}
+
+/* Espaciado del Título Principal con el Menú */
+.portfolio-section-header-clean {
+    text-align: center;
+    margin-top: 100px; /* <--- Espacio para que no choque con el menú */
+    margin-bottom: 80px; /* <--- Espacio antes de que empiecen las fotos */
+}
+
+.portfolio-section-header-clean h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--azul-petroleo);
+}
+
+.project-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 150px; /* <--- Mucho espacio entre bloques para limpieza visual */
+}
+
+.project-block {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; 
+    gap: 80px; /* Espacio entre foto y texto */
+    align-items: center;
+}
+
+/* El Zigzag: Proyectos pares invierten posición */
+.project-block:nth-child(even) {
+    direction: rtl; 
+}
+
+.project-block:nth-child(even) .project-text-content {
+    direction: ltr; 
+}
+
+/* MARCO DE LA FOTO (Limpiado) */
+.project-image-frame {
+    background-color: var(--blanco);
+    border-radius: 30px; /* Bordes bien redonditos */
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(26, 42, 58, 0.08);
+    aspect-ratio: 16 / 10; /* Formato un poco más alto para multimedia */
+    border: 1px solid rgba(26, 42, 58, 0.03);
+}
+
+.project-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TEXTO DEL PROYECTO (Limpiado) */
+.project-text-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--azul-petroleo);
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+
+.project-text-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--texto-gris);
+    max-width: 500px;
+}
+
+/* Para pantallas de celular */
+@media (max-width: 900px) {
+    .project-block, .project-block:nth-child(even) {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 40px;
+    }
+    .portfolio-section-header-clean { margin-top: 60px; }
 }

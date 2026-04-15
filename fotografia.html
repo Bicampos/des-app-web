@@ -3,29 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animación 2D | Mi Portafolio</title>
+    <title>Animación 2D | Bianca Campos</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <nav>
+    <header class="header-main">
+        <nav class="nav-oval">
             <ul class="nav-links">
-                <li><a href="index.html">← Volver al Inicio</a></li>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="portafolio.html" class="active">PORTAFOLIO</a></li>
+                <li><a href="contacto.html">CONTÁCTAME</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section style="text-align: center; min-height: 60vh;">
-            <h1>Animación 2D</h1>
-            <p>Aquí irá la galería de mis proyectos, videos o GIFs.</p>
-        </section>
-    </main>
+   <main class="project-detail-container">
+    
+    <header class="portfolio-section-header-clean">
+        <h1>Animación 2D</h1>
+    </header>
 
-    <footer id="contacto">
-        <p>Ciudad del Carmen, Campeche, México</p>
+    <section class="project-showcase">
+
+        <article class="project-block">
+            <div class="project-image-frame">
+                <img src="img/tu_proyecto_1.jpg" alt="Proyecto 1">
+            </div>
+            <div class="project-text-content">
+                <h2>Título de tu Proyecto 1</h2>
+                <p>Aquí explicarás de qué trata tu trabajo. Puedes hablar del software que usaste y cuál fue el concepto creativo detrás de esta pieza multimedia.</p>
+            </div>
+        </article>
+
+        <article class="project-block">
+            <div class="project-image-frame">
+                <img src="img/tu_proyecto_2.jpg" alt="Proyecto 2">
+            </div>
+            <div class="project-text-content">
+                <h2>Título de tu Proyecto 2</h2>
+                <p>Al alternar los lados, el diseño se vuelve inusual y funcional, permitiendo que cada imagen destaque por sí sola en su propio bloque de espacio.</p>
+            </div>
+        </article>
+
+        </section>
+</main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="social-icons">
+                <a href="https://instagram.com/bicamps_" target="_blank" class="icon-link"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                <a href="mailto:binnie108@gmail.com" class="icon-link"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="portafolio.html">PORTAFOLIO</a></li>
+                    <li><a href="contacto.html">CONTÁCTAME</a></li>
+                </ul>
+            </nav>
+            <p class="copyright">© 2026 Bianca Campos | Ciudad del Carmen</p>
+        </div>
     </footer>
 
 </body>
