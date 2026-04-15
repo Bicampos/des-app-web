@@ -112,13 +112,17 @@ main { flex-grow: 1; }
     width: 40px;
     height: 40px;
     background-color: var(--azul-petroleo);
-    color: white;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 800;
-    font-size: 0.8rem;
-    border-radius: 6px;
+    overflow: hidden; /* Esto evita que la foto se salga de las esquinas redondeadas */
+}
+
+.tool-icon img {
+    width: 100%; /* Ajusta este porcentaje para que el icono tenga un poco de margen interno */
+    height: 100%;
+    object-fit: contain; /* Mantiene la proporción de la imagen sin deformarla */
 }
 
 /* --- SKILLS EN LISTA --- */
