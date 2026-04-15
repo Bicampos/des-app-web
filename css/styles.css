@@ -28,7 +28,6 @@ main { flex-grow: 1; }
     padding: 30px 10% 10px 10%;
     display: flex;
     justify-content: flex-end;
-    position: sticky; /* Esto hace que el menú te siga al bajar */
     top: 0;
     z-index: 1000;
 }
@@ -207,4 +206,70 @@ main { flex-grow: 1; }
 @media (max-width: 768px) {
     .info-columns, .projects-grid { grid-template-columns: 1fr; }
     .hero-perfil { flex-direction: column; text-align: center; }
+}
+
+/* --- DISEÑO DE CONTACTO ESTÉTICO --- */
+.contacto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 10%;
+    min-height: 60vh;
+}
+
+.contacto-card {
+    background-color: var(--azul-petroleo); /* Bloque azul elegante */
+    color: white;
+    padding: 60px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(26, 42, 58, 0.15);
+}
+
+.contacto-card h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--blanco);
+}
+
+.contacto-card p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+.contacto-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-contacto {
+    background-color: var(--amarillo); /* Botones amarillos como tu referencia */
+    color: var(--azul-petroleo);
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+.btn-contacto:hover {
+    transform: scale(1.05);
+    background-color: var(--blanco);
+}
+
+.btn-contacto svg {
+    stroke: var(--azul-petroleo);
+}
+
+/* Ajuste del Footer en contacto */
+.contacto-container + .site-footer {
+    margin-top: 0;
 }
